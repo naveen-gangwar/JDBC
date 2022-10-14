@@ -9,7 +9,7 @@ public class FirstJdbc {
 //          creating a connection
             String url = "jdbc:mysql://localhost:3306/youtube";
             Connection con = DriverManager.getConnection(url, "root", "root1");
-//            con.close();
+            con.close();
             if (con.isClosed())
                 System.out.println("connection is closed");
             else
