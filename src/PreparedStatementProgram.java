@@ -1,5 +1,6 @@
 import java.sql.Connection;
-import java.sql.*;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 public class PreparedStatementProgram {
     public static void main(String[] args) {
@@ -12,13 +13,13 @@ public class PreparedStatementProgram {
 
             //get the PreparedStatement object
 
-            PreparedStatement pstmt =  con.prepareStatement(q);
+            PreparedStatement pstmt = con.prepareStatement(q);
 
             // set the value to query
-            pstmt.setString(1,"Naveen");
-            pstmt.setString(2,"Bisalpur");
-            pstmt.setString(1,"Praveen");
-            pstmt.setString(2,"Bisalpur");
+            pstmt.setString(1, "Naveen");
+            pstmt.setString(2, "Bisalpur");
+            pstmt.setString(1, "Praveen");
+            pstmt.setString(2, "Bisalpur");
             pstmt.executeUpdate();
 
             System.out.println("Table value updated in database....");

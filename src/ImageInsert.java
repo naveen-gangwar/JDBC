@@ -16,15 +16,15 @@ public class ImageInsert {
 
             //get the PreparedStatement object
 
-            PreparedStatement pstmt =  con.prepareStatement(q);
+            PreparedStatement pstmt = con.prepareStatement(q);
 
             // It is use for selecting image file
-            JFileChooser jf=new JFileChooser();
+            JFileChooser jf = new JFileChooser();
             jf.showOpenDialog(null);
 
-            File file= jf.getSelectedFile();
-            FileInputStream fis=new FileInputStream(file);
-            pstmt.setBinaryStream(1,fis,fis.available());
+            File file = jf.getSelectedFile();
+            FileInputStream fis = new FileInputStream(file);
+            pstmt.setBinaryStream(1, fis, fis.available());
 
             pstmt.executeUpdate();
 

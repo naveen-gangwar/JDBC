@@ -1,8 +1,8 @@
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.sql.Connection;
-        import java.sql.*;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 public class DynamicValueInsertion {
     public static void main(String[] args) {
@@ -15,19 +15,19 @@ public class DynamicValueInsertion {
 
             //get the PreparedStatement object
 
-            PreparedStatement pstmt =  con.prepareStatement(q);
+            PreparedStatement pstmt = con.prepareStatement(q);
 
             // set the value to query using console
 
-            BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Enter name");
-            String name=br.readLine();
+            String name = br.readLine();
 
             System.out.println("Entr city");
-            String city=br.readLine();
+            String city = br.readLine();
 
-            pstmt.setString(1,name);
-            pstmt.setString(2,city);
+            pstmt.setString(1, name);
+            pstmt.setString(2, city);
 
             pstmt.executeUpdate();
 

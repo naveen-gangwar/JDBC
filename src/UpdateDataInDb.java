@@ -1,6 +1,9 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
 public class UpdateDataInDb {
     public static void main(String[] args) {
         try {
@@ -10,12 +13,12 @@ public class UpdateDataInDb {
             // create a query , ? means we insert value dynamically
             String q = "update table1 set tName=?,tCity=? where tId=?";
 
-            BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             System.out.println("Enter name,city and student id");
 
-            String name=br.readLine();
-            String city= br.readLine();
-            int id=Integer.parseInt(br.readLine());
+            String name = br.readLine();
+            String city = br.readLine();
+            int id = Integer.parseInt(br.readLine());
             //get the PreparedStatement object
 
             PreparedStatement pstmt = con.prepareStatement(q);
